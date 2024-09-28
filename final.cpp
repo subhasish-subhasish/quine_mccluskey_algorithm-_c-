@@ -5,6 +5,7 @@
 using namespace std;
 
 //Functions
+int numberOfOneCount(vector<int> a);//count no of 1
 void printVector(const vector<int> v); //function for print vector
 void printSet(const set<int> s); //fuction for printset
 set<int> mergeSets(const set<int>& set1, const set<int>& set2); // Function to merge two sets
@@ -112,7 +113,7 @@ bool canCombine(const Data &a,const Data &b,Data &result){
         }
     }
     result.binValue=combineBinvalue;
-    result.numberOfOnes=a.numberOfOnes;
+    result.numberOfOnes=numberOfOneCount(combineBinvalue);
     result.minterms=mergeSets(a.minterms,b.minterms);
     return true;
 }
@@ -165,4 +166,12 @@ void removeSameMinterm(vector<Data> &grid){
         }
     }
     return;
+}
+int numberOfOneCount(vector<int> a){
+    int count=0;
+    for(int i=0;i<=a.size();i++){
+        if(a[i]==1) count++;
+        
+    }
+    return count;
 }
