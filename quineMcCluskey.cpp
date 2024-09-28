@@ -45,10 +45,8 @@ vector<Data> quineMcCluskey(vector<Data>& grid, int noVarible) {
             term.isPrimeImplicant = true;
         }
     }
-
     // If no further combinations, return prime implicants
     if (!termsCombined) return grid;
-
     // Recursively combine further if needed
     vector<Data> nextIteration = quineMcCluskey(combinedTerms, noVarible);
     
@@ -61,7 +59,7 @@ vector<Data> quineMcCluskey(vector<Data>& grid, int noVarible) {
     return nextIteration;
 }
 int main(){
-    Data a,b,c,d,e,f,g,h,ans;
+    Data a,b,c,d,e,f,g,h;
     a.numberOfOnes=1;a.binValue={0,0,0,1};a.minterms={1};
     b.numberOfOnes=2;b.binValue={0,0,1,1};b.minterms={3};
     c.numberOfOnes=1;c.binValue={0,1,0,0};c.minterms={4};
